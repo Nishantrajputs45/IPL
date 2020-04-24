@@ -58,7 +58,6 @@ function visualizeMatchesWonByEachTeam(matchesWonByEachTeam) {
   const teams={};
   const years =[];
   const names=[];
-  const datas=[];
   for(let year in matchesWonByEachTeam)
   {
     for(let team in matchesWonByEachTeam[year])
@@ -91,8 +90,11 @@ function visualizeMatchesWonByEachTeam(matchesWonByEachTeam) {
   }
   for(let team in teams)
   {
-    names.push(team);
-    datas.push(teams[team]);
+    let t={};
+    t.name=team;
+    t.data=teams[team];
+    names.push(t);
+   
   }
   
 
@@ -127,72 +129,8 @@ function visualizeMatchesWonByEachTeam(matchesWonByEachTeam) {
           borderWidth: 0
       }
   },
-  series: [
-    {
-      name: names[0],
-      data: datas[0]
-    },
-    {
-      name: names[1],
-      data: datas[1]
-    },
-    {
-      name: names[2],
-      data: datas[2]
-    },
-    {
-      name: names[3],
-      data: datas[3]
-    },
-    {
-      name: names[4],
-      data: datas[4]
-    },
-    {
-      name: names[5],
-      data: datas[5]
-    },
-    {
-      name: names[6],
-      data: datas[6]
-    },
-    {
-      name: names[7],
-      data: datas[7]
-    },
-    {
-      name: names[8],
-      data: datas[8]
-    },
-    {
-      name: names[9],
-      data: datas[9]
-    },
-    {
-      name: names[10],
-      data: datas[10]
-    },
-    {
-      name: names[11],
-      data: datas[11]
-    },
-    {
-      name: names[12],
-      data: datas[12]
-    },
-    {
-      name: names[13],
-      data: datas[13]
-    },
-    {
-      name: names[14],
-      data: datas[14]
-    },
-    {
-      name: names[15],
-      data: datas[15]
-    }
-  ]
+  series: names
+  
   });
 
 
